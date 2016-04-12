@@ -19,8 +19,10 @@ public class UDPSent implements Runnable {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
+		System.out.println("发送线程");
 		try {
-			pack=new DatagramPacket(cont.getBytes("UTF-8"),cont.length(),InetAddress.getByName(ip),port);
+			buf=cont.getBytes("UTF-8");
+			pack=new DatagramPacket(buf,buf.length,InetAddress.getByName(ip),port);
 			socket=new DatagramSocket(8888);
 			socket.send(pack);
 		} catch (SocketException e) {

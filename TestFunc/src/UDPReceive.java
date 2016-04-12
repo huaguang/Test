@@ -30,7 +30,8 @@ public class UDPReceive implements Runnable {
 			while(true)
 			{
 				socket.receive(pack);
-				cont=new String(pack.getData(),0,pack.getLength());
+				cont=new String(pack.getData(),0,pack.getLength(),"UTF-8");
+				System.out.println(cont);
 				if("close".equals(cont))
 					break;
 				contJTA.setText(contJTA.getText()+"\n"+cont+"\tAddress:"+pack.getAddress().getHostAddress()+"\tPort:"+pack.getPort());

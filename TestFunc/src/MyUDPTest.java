@@ -32,7 +32,7 @@ public class MyUDPTest {
 		JLabel ipLab=new JLabel("ip地址",JLabel.CENTER);
 		JTextField ipText=new JTextField();
 		JLabel portLab=new JLabel("端口号",JLabel.CENTER);
-		JTextField portText=new JTextField();
+		JTextField portText=new JTextField("8887");
 		JButton receBut=new JButton("收");
 		receiveP.add(ipLab);
 		receiveP.add(ipText);
@@ -47,9 +47,9 @@ public class MyUDPTest {
 		Panel sentP=new Panel();
 		sentP.setLayout(new GridLayout(3,2));
 		JLabel ipSLab=new JLabel("ip地址",JLabel.CENTER);
-		JTextField ipSText=new JTextField();
+		JTextField ipSText=new JTextField("localhost");
 		JLabel portSLab=new JLabel("端口号",JLabel.CENTER);
-		JTextField portSText=new JTextField();
+		JTextField portSText=new JTextField("8887");
 		JButton sentBut=new JButton("发");
 		sentP.add(ipSLab);
 		sentP.add(ipSText);
