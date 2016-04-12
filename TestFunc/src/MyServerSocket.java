@@ -13,6 +13,7 @@ public class MyServerSocket {
 		OutputStream out=client.getOutputStream();
 		PrintStream print=new PrintStream(out);
 		print.print(str);
+		System.out.println(client.getRemoteSocketAddress().toString());
 		client.close();
 		server.close();
 	}
