@@ -5,25 +5,33 @@ import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class MyEchoServer {
+public class MyEchoServer implements Runnable{
 	public MyEchoServer() throws IOException
 	{
-		ServerSocket server=null;
 		server=new ServerSocket(8887);
-		Socket client=null;
-		BufferedReader buf=null;
-		PrintStream out=null;
-		String str=null;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
 		boolean flag=true;
 		while(flag)
 		{
-			client=server.accept();
-			buf=new BufferedReader(new InputStreamReader(client.getInputStream()));
-			out=new PrintStream(client.getOutputStream());
-			out.print("Hello world!\n");
+			try{
+				client=server.accept();
+				buf=new BufferedReader(new InputStreamReader(client.getInputStream()));
+				out=new PrintStream(client.getOutputStream());
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			out.print("服务端：Hello world!连接到新的客户端\n");
 			while(true)
 			{
-				str=buf.readLine();
+				try {
+					str=buf.readLine();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				System.out.println(str);
 				if("close".equals(str))
 					break;
@@ -34,11 +42,25 @@ public class MyEchoServer {
 				}
 				out.println("echo:"+str);
 			}
-			client.close();
+			try {
+				client.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		out.close();
-		buf.close();
-		server.close();
+		try {
+			buf.close();
+			server.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
+	ServerSocket server=null;
+	Socket client=null;
+	BufferedReader buf=null;
+	PrintStream out=null;
+	String str=null;
 }

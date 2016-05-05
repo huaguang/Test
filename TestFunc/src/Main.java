@@ -14,6 +14,10 @@ public class Main {
 	//	System.out.println(new Date(0));
 	//互联网校验和,貌似是错的。
 	//	new CalCheckSum();
+	//经典TCP接口编程Echo程序
+	//同时启动服务器程序与客户端程序。利用控制台进行输入与输出。
+		new Thread(new MyEchoServer()).start();
+		new MyClientSocket();
 	}
 
 }
