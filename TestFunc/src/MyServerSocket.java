@@ -1,10 +1,9 @@
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class MyServerSocket {
+	@SuppressWarnings("resource")
 	public MyServerSocket() throws IOException
 	{
 		//单线程服务端程序；

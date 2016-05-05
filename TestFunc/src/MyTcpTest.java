@@ -21,6 +21,7 @@ public class MyTcpTest implements Runnable {
 		{
 			try {
 				str=buf.readLine();
+				System.out.println(str);
 				if("close".equals(str))
 					break;
 				out.println("Echo:"+str);
