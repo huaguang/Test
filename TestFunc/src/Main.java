@@ -16,8 +16,11 @@ public class Main {
 	//	new CalCheckSum();
 	//经典TCP接口编程Echo程序
 	//同时启动服务器程序与客户端程序。利用控制台进行输入与输出。
-		new Thread(new MyEchoServer()).start();
-		new MyClientSocket();
+	/*	new Thread(new MyEchoServer()).start();
+		new MyClientSocket();*/
+	//公私钥测试
+		new Key();
+		
 	}
 
 }
