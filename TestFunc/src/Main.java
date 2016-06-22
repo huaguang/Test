@@ -6,6 +6,7 @@ public class Main {
 	//多线程TCP服务器程序。
 	//	new MyServerSocket();
 	//使用UDP协议进行通信，包含MyUDPTest.java,UDPReceive.java,UDPSent.java三个文件
+		
 	//	new MyUDPTest();
 		
 	//	GITtest git=new GITtest();
@@ -19,7 +20,12 @@ public class Main {
 	/*	new Thread(new MyEchoServer()).start();
 		new MyClientSocket();*/
 	//公私钥测试
-		new Key();
+	//	new Key();
+	//	new TestPassValue();
+		//new ChangeTable();
+		//new SwingJDialog();
+	//状态空间生成程序
+		new StateSpace();
 		
 	}
 
