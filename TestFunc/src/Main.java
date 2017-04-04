@@ -25,7 +25,13 @@ public class Main {
 		//new ChangeTable();
 		//new SwingJDialog();
 	//状态空间生成程序
-		new StateSpace();
+	//	new StateSpace();
+	
+	//测试输入输出
+	//	new TestInputAndOutPut();
+		
+	//测试DEC算法个步骤输出
+		new DECSteps();
 		
 	}
 
